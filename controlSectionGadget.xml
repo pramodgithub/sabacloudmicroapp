@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModulePrefs title="utf8errordemo">
+    <Require feature="opensocial-0.9"/>
+    <Require feature="views" />
+    <Require feature="dynamic-height" />
+  </ModulePrefs>
+  <Content type="html" view="homecanvas">
+    <![CDATA[
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Control Center</title>
+<style>
+html {
+    font-family: arial, sans-serif;
+    margin: 1px;
+    background-color: #fafafa;
+    height: 85px;
+}
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 3px solid #e3e3e8;
+}
+#logo {
+  float: left;
+  font-size: 3em;
+  margin: 0;
+  padding: .4em;
+  text-decoration: none;
+  color: #333;
+  border-right: 1px solid #e3e3e8;
+  transition: .5s all;
+}
+#logo:hover {
+  color: #fafafa;
+  background-color: #333;
+}
+nav {
+  display: flex;
+    justify-content: center;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 1.7em 2em;
+      margin-right: auto;
+    margin-left: auto;
+}
+nav ul li {
+  display: inline;
+  padding: 0 .7em;
+}
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  padding-bottom: 1.3em;
+  transition: .5s color;
+}
+nav ul li a:hover {
+  border-bottom: 5px solid #333;
+}
+#current {
+  color: #D35400;
+  border-bottom: 5px solid #333;
+}
+#fb:hover {
+  color: #3b5998;
+}
+#twitter:hover {
+  color: #00acee;
+}
+}
+li a img {
+    display: none;
+}
+</style>
+<script> window.onload=function() { 
+     gadgets.window.adjustHeight("80")
+     }
+     </script>
+</head>
+<body>
+
+
+
+
+<header>
+   
+  <nav>
+   <ul>
+        <li><a id="current" title="Human Resources" href="https://hr.intranet.allscripts.com/Pages/Global_Human_Resources.aspx" target="_blank" rel="noopener"><img  src="https://allscriptsleap-external.sabacloud.com/Saba/Web/ALLSCRIPTS/Image/f29b9278-4fff-4627-8a8b-84abc7d9c306?tfile=Home.PNG_f29b9278-4fff-4627-8a8b-84abc7d9c306_1588761202058.PNG" /> HR Home</a></li>
+<li><a href="#"><img src="/Saba/Web/ALLSCRIPTS/Image/50104c0b-e67d-4cfd-8b5a-1ae0d4a6160f?tfile=Learn.png_50104c0b-e67d-4cfd-8b5a-1ae0d4a6160f_1588761246179.png" /> Learn</a></li>
+<li><a href="#"><img  src="https://allscriptsleap-external.sabacloud.com/Saba/Web/ALLSCRIPTS/Image/30a4eebd-34a5-4561-a66c-60179dae0222?tfile=HealthStatus.PNG_30a4eebd-34a5-4561-a66c-60179dae0222_1588761314201.PNG" /> Links</a></li>
+<li><a title="Cheer Employee Recognition" href="https://www.globoforce.net/microsites/motivation/SSOEntryPoint?client=allscripts" target="_blank" rel="noopener"><img  src="https://allscriptsleap-external.sabacloud.com/Saba/Web/ALLSCRIPTS/Image/0ae50a97-6229-458f-bbdb-91e9ca966ef0?tfile=Award.PNG_0ae50a97-6229-458f-bbdb-91e9ca966ef0_1588761423814.PNG" /> Cheer</a></li>
+<li><a title="Contact Support" href="https://allscripts.service-now.com/sp" target="_blank" rel="noopener"><img  src="https://allscriptsleap-external.sabacloud.com/Saba/Web/ALLSCRIPTS/Image/3d4beb2e-0cc2-467b-ba86-170b225f16f1?tfile=Contact.PNG_3d4beb2e-0cc2-467b-ba86-170b225f16f1_1588763007352.PNG" /> Contact Support</a></li>
+      </ul>
+  </nav>
+</header>
+</body>
+</html>
+]]>
+  </Content>
+</Module>

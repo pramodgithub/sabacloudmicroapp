@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModulePrefs title="utf8errordemo">
+    <Require feature="opensocial-0.9"/>
+    <Require feature="views" />
+  </ModulePrefs>
+  <Content type="html" view="home">
+    <![CDATA[
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SABA Announcement</title>
+
+    
+<style>
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+      .Message {
+  display: block;
+  position: relative;
+  margin: 20px;
+  
+  background-color: #0074D9;
+  color: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+   border-radius: 10px;
+}
+.Message--orange {
+  background-color: #FFE6AA;
+}
+.Message--teal {
+  background-color: #eaf1f3;
+}
+
+.Message-icon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 60px;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px 0px 0px 10px;
+}
+.Message-icon > i {
+  width: 20px;
+  font-size: 20px;
+}
+
+.Message-body {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+  color: #373737;
+}
+.Message-body > p {
+  line-height: 1.1;
+  margin-top: 6px;
+}
+.Message-title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.Message-title-teal{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f3704c;
+}
+
+    </style>
+</head>
+<body>
+<div class="Message Message--orange">
+  <div class="Message-icon">
+    <i class="fa fa-bell-o"></i>
+  </div>
+  <div class="Message-body">
+    <p class="Message-title">LinkedIn Learning from CDN</p>
+    <p>Launch all courses through the Allscripts Learning Center for credit to be recorded on your Allscripts transcript. </p>
+  </div>
+ 
+</div>
+<div class="Message Message--orange">
+  <div class="Message-icon">
+    <i class="fa fa-exclamation"></i>
+  </div>
+  <div class="Message-body">
+    <p class="Message-title">Completing Compliance Courses from CDN</p>
+    <p>Please review this document for best practices in completing required Allscripts compliance courses Requirements for Successful Completion of Courses . You can learn more about compliance requirements here.</p>
+  </div>
+ 
+</div>
+
+<div class="Message Message--teal">
+  <div class="Message-icon">
+    <i class="fa fa-bell-o"></i>
+  </div>
+  <div class="Message-body">
+    <p class="Message-title-teal"> from CDN Allscripts Central to no longer be accessible through Internet Explorer</p>
+    <p>Beginning August 24, Allscripts Central will no longer be accessible through Internet Explorer (IE).   Click here for details. </p>
+  </div>
+ 
+</div>
+
+<div style="height:2px;"></div>
+ 
+</body>
+
+<div style="height:1px;"></div>
+ 
+</body>
+</html>
+]]>
+  </Content>
+</Module>

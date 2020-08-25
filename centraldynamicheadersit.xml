@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+    <ModulePrefs title="utf8errordemo">
+        <Require feature="opensocial-0.9"/>
+        <Require feature="views" />
+        <Require feature="dynamic-height" />
+    </ModulePrefs>
+    <Content type="html" view="homecanvas">
+        <![CDATA[
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://centraldocrepository.blob.core.windows.net/centralheader/sit/scripts/central/cep_HeaderCore_BS4.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://centraldocrepository.blob.core.windows.net/centralheader/sit/scripts/central/cep_HeaderCore.js"></script>
+<!-- <script src="https://centralheadersit.azureedge.net/central/cep_HeaderCore.js"></script> -->
+<script>		
+
+  window.onload=function() { 
+     gadgets.window.adjustHeight("300")
+     }
+    $(document).ready(function() {
+        var prefs = gadgets.views.getParams();
+        var userId = prefs.sabaContext.userId;
+        var username =prefs.sabaContext.userName;
+        console.log(JSON.stringify(prefs.sabaContext));
+
+        var settings = {
+  "url": "https://centralsit.allscripts.com/CentralAuthentication/oauth2/token",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  "data": {
+    "grant_type": "password",
+    "client_id": "snow",
+    "username": "svc_snowintg",
+    "password": "St0rmyW3@th3r!",
+    "client_secret": "XNOKPxRi09NE1OQiv063BQyor2rLnXEnDQJ4xbKDP9I="
+  }
+};
+
+$.ajax(settings).done(function (response) {
+      $("cep-Header").createCentralHeader({
+                    personPartyId: "", 
+                    username: username, 
+                    token: response.access_token,
+                    headerVersion: "BS4",
+                    environment: "SIT",
+                    disableSearch: false,
+                    isLMSHeader: true
+                });        
+
+});
+          
+    } );
+</script>
+</head>
+<body >
+<div class="new-centralHeader" style="z-index:1">
+<nav id="centralHeader" class="navbar navbar-custom navbar-expand-lg pb-lg-0">
+
+<!--Spinner-->
+<div id="spinner" style="margin: auto;">
+<img src="https://centraldocrepository.blob.core.windows.net/centralheader/sit/scripts/central/Spin.gif">
+</div>
+<!--Spinner End-->
+
+<!--Header Starts-->
+<!--Logo-->
+<div id="cep_Logo">
+</div>
+<!--Logo End-->
+<!--Toggle button-->
+<nav class="navbar navbar-dark">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+</nav>
+<!--Toggle Button End-->
+
+<div class="collapse navbar-collapse ml-1 flex-column" id="navbarSupportedContent">
+<!--Search-->
+<div id="cep_Search">
+</div>
+<!--Search End-->
+<!--Left Side Nav-->
+<ul id="cep_leftSideMenu" class="navbar-nav ml-md-3 mr-auto mt-1">
+<ul class="navbar-nav nav-to-right mt-1">
+<li id="cep_rightSideMenu" class="nav-item dropdown nav-item-style">
+
+</li>
+</ul>
+</ul>
+
+<!--Left Side Nav End-->
+</div>
+
+<!--Header Ends-->
+
+</nav>
+<div id="cep_Announcement" class="pos-f-t">
+</div>
+
+</div>
+</body>
+</html>
+]]>
+    </Content>
+</Module>

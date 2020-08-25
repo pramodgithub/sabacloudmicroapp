@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+   <ModulePrefs title="utf8errordemo" >
+      <Require feature="opensocial-0.9"/>
+      <Require feature="views" />
+   </ModulePrefs>
+   <Content type="html" view="home,canvas,profile">
+<![CDATA[
+<html>
+	 <head>
+	 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    	<link rel="stylesheet" href="https://centraldocrepository.blob.core.windows.net/centralheader/sit/scripts/central/cep_HeaderCore_BS4.css"  />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+		<script src="https://centraldocrepository.blob.core.windows.net/centralheader/sit/scripts/central/cep_HeaderCore.js" ></script>
+		<!-- <script src="https://centralheadersit.azureedge.net/central/cep_HeaderCore.js" ></script> -->
+    
+		<script>		
+			function updateRoleName(){
+                var prefs = gadgets.views.getParams();
+				var userId = prefs.sabaContext.userId;
+				var username =prefs.sabaContext.userName;
+				console.log(JSON.stringify(prefs.sabaContext));
+               
+				$("cep-Header").createCentralHeader({
+							personPartyId: "", 
+							username: username, 
+							token: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjMzNjI2MEQ3MEQwQUIyRkEyQzY5N0M4NTgxMUQ2QjUwNTU4MTFBOTUiLCJ0eXAiOiJKV1QifQ.eyJuYW1laWQiOiJzdmNfc25vd2ludGciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiTkEiLCJyb2xlIjoiTkEiLCJ1bmlxdWVfbmFtZSI6Ik5BIiwibmJmIjoxNTkxNzI2MzA5LCJleHAiOjE1OTE4MjcxMDksImlhdCI6MTU5MTcyNjMwOSwiaXNzIjoiaHR0cDovL2NlbnRyYWxzaXRhZGZzLmFsbHNjcmlwdHMuY29tL2FkZnMvc2VydmljZXMvdHJ1c3QiLCJhdWQiOiJodHRwczovL2FsbHNjcmlwdHMuc2VydmljZS1ub3cuY29tIn0.IxPbbxZ_Bm4b8pfwPhG7KfOL23zxLzIS1twrhlUgahx75zFidxm0TIkVHeut7iFMAjaVmCDTYI5JcapY8uKZnxRU8FRj8SKNEBqGvOinrEt7EE7GDScLuRSec-4s6wKjpkehZlbKiH8sNewYhKBeTyA0ZGOMsu8acLfGgxDi10NXvr014YfQgV4Gd9-OrV4BRnI3AqI7DPX6aOCHAoaokWvpDHS54JXN4X5vHH93ga8mQZ7OV3q_9M8BzaMszoONAeS8v5AyrxJ89n8xTVmmaLCiV5vwCd7J2L6zGmVM0eXV5XTm4u457HCofmy5GkTAHPzHyDAh5AJUAShXSIVkUA",
+                            headerVersion: "BS4",
+							environment: "SIT",
+							disableSearch: false,
+                            isLMSHeader: true
+						});
+			}(document); 
+		</script>
+	</head> 
+	<body >
+		REST API saba certificate: <br />		
+		<button onclick='updateRoleName();'>Call test API</button>
+		<div class="new-centralHeader">
+        <nav id="centralHeader" class="navbar navbar-custom navbar-expand-lg pb-lg-0">
+
+            <!--Spinner-->
+            <div id="spinner" style="margin: auto;">
+                <img src="https://centraldocrepository.blob.core.windows.net/centralheader/sit/scripts/central/Spin.gif">
+            </div>
+            <!--Spinner End-->
+
+            <!--Header Starts-->
+            <!--Logo-->
+            <div id="cep_Logo">
+            </div>
+            <!--Logo End-->
+            <!--Toggle button-->
+            <nav class="navbar navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <!--Toggle Button End-->
+
+            <div class="collapse navbar-collapse ml-1 flex-column" id="navbarSupportedContent">
+                <!--Search-->
+                <div id="cep_Search">
+                </div>
+                <!--Search End-->
+                <!--Left Side Nav-->
+                <ul id="cep_leftSideMenu" class="navbar-nav ml-md-3 mr-auto mt-1">
+                    <ul class="navbar-nav nav-to-right mt-1">
+                        <li id="cep_rightSideMenu" class="nav-item dropdown nav-item-style">
+
+                        </li>
+                    </ul>
+                </ul>
+
+                <!--Left Side Nav End-->
+            </div>
+
+            <!--Header Ends-->
+
+        </nav>
+        <div id="cep_Announcement" class="pos-f-t">
+        </div>
+
+    </div>
+	</body>
+</html>
+]]>
+   </Content>
+</Module>

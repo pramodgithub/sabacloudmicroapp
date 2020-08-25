@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="Multiple Content Sections (version 3)">
+        <Require feature="opensocial-0.9" />
+    </ModulePrefs>
+    <Content type="html" view="homecanvas">
+        <![CDATA[
+    <html>
+	 
+	<body>
+		REST API saba certificate: <br />
+	</body>
+  ]]>
+    </Content>
+</Module>

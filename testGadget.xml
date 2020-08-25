@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+    <ModulePrefs title="utf8errordemo">
+        <Require feature="opensocial-0.9"/>
+        <Require feature="views" />
+    </ModulePrefs>
+    <Content type="html" view="homecanvas">
+        <![CDATA[
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SABA Announcement</title>
+
+    
+<style>
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+      .Message {
+  display: block;
+  position: relative;
+  margin: 20px;
+  
+  background-color: #0074D9;
+  color: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+   border-radius: 10px;
+}
+.Message--orange {
+  background-color: #eaf1f3;
+}
+.Message-icon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 60px;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px 0px 0px 10px;
+}
+.Message-icon > i {
+  width: 20px;
+  font-size: 20px;
+}
+
+.Message-body {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 30px 20px 30px 10px;
+  color: #0c203d;
+}
+.Message-body > p {
+  line-height: 1.0;
+  margin-top: 6px;
+}
+.Message-title{
+    font-size: 21px;
+    font-weight: bold;
+    color: #f3704c;
+}
+    </style>
+</head>
+<body>
+<div class="Message Message--orange">
+  <div class="Message-icon">
+    <i class="fa fa-bell-o"></i>
+  </div>
+  <div class="Message-body">
+    <p class="Message-title"> Allscripts Central to no longer be accessible through Internet Explorer</p>
+    <p>Beginning August 24, Allscripts Central will no longer be accessible through Internet Explorer (IE).   Click here for details. </p>
+  </div>
+ 
+</div>
+
+</body>
+</html>
+]]>
+    </Content>
+</Module>

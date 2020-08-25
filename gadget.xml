@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="Multiple Content Sections (version 3)">
+        <Require feature="opensocial-0.9" />
+    </ModulePrefs>
+    <Content type="html" view="home,canvas">
+        <![CDATA[
+    <html>
+	 <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script>
+			function updateRoleName(){
+                console.log(gadgets.prefs.sabaContext)
+                var prefs = gadgets.views.getParams();
+                <!-- var prefs = gadgets.views.getParams(); -->
+				var userId = prefs.sabaContext.userId;
+                var apiCertificate = prefs.sabaContext.apiCertificate;
+				var certificate=prefs.sabaContext.certificate;
+				var sabaLocale=prefs.sabaContext.sabaLocale;
+				var urlHost = parent.location;
+				console.log(prefs);
+                console.log(prefs.sabaContext);
+			}(document);
+		</script>
+	</head>
+	<body>
+		REST API saba certificate: <br />
+		<button onclick='updateRoleName();'>Call test API</button>
+	</body>
+  ]]>
+    </Content>
+</Module>
