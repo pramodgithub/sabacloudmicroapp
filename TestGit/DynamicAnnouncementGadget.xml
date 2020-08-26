@@ -99,7 +99,7 @@
                  
                  $.each(data.SiteAnnouncements, function(i, announcement) { 
                    announcementHTML+= '<div class="Message Message--teal"><div class="Message-icon"><i class="fa fa-bell-o"></i></div><div class="Message-body">'; 
-                   announcementHTML+= '<p class="Message-title-teal">'+announcement.title+'</p>'; 
+                   announcementHTML+= '<p class="Message-title-teal">'+announcement.Title+'</p>'; 
                    announcementHTML+= '<p>'+announcement.Summary+'</p></div></div>';
 
                  });
@@ -108,7 +108,7 @@
                  }
                 },
                 complete: function(data) {
-                  $(".announcementSection").html(announcementHTML);
+                  $("#announcementSection").html(announcementHTML);
                   
                 }
               });
