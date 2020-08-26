@@ -60,6 +60,9 @@
     color: #f3704c;
     margin-bottom: 10px;
 }
+.Message--teal {
+    background-color: #eaf1f3;
+}
     </style>
     <script>
 
