@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModulePrefs title="utf8errordemo">
+    <Require feature="opensocial-0.9"/>
+    <Require feature="views" />
+  </ModulePrefs>
+  <Content type="html" view="home">
+    <![CDATA[
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dynamic Announcement</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<style>
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+      .Message {
+  display: block;
+  position: relative;
+  margin: 20px;
+  
+  background-color: #0074D9;
+  color: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+   border-radius: 10px;
+}
+.Message--orange {
+  background-color: #eaf1f3;
+}
+.Message-icon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 60px;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px 0px 0px 10px;
+}
+.Message-icon > i {
+  width: 20px;
+  font-size: 20px;
+}
+
+.Message-body {
+  display: table-cell;
+  vertical-align: middle;
+  padding:10px;
+  color: #0c203d;
+}
+.Message-body > p {
+  line-height: 1.1;
+  margin-top: 6px;
+}
+.Message-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: #f3704c;
+    margin-bottom: 10px;
+}
+    </style>
+    <script>
+
+      $(document).ready(function () {
+          var prefs = gadgets.views.getParams();
+          var userId = prefs.sabaContext.userId;
+          var username = prefs.sabaContext.userName;
+          console.log(JSON.stringify(prefs.sabaContext));
+
+          var settings = {
+            url: "https://centralsit.allscripts.com/CentralAuthentication/oauth2/token",
+            method: "POST",
+            timeout: 0,
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            data: {
+              grant_type: "password",
+              client_id: "snow",
+              username: "svc_snowintg",
+              password: "St0rmyW3@th3r!",
+              client_secret: "XNOKPxRi09NE1OQiv063BQyor2rLnXEnDQJ4xbKDP9I=",
+            },
+          };
+        var apiUrl =  "https://centralsit.allscripts.com/CentralApi/Api/users/" +   username +   "/GetSiteMenuByUserName/LMS/2.0/";
+        var announcementHTML = "";
+          $.ajax(settings).done(function (response) {
+            $.ajax({
+                url: apiUrl,
+                cache: true,
+                method: "GET",
+                headers: {
+                  Authorization: "Bearer " + response.access_token,
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
+                success: function(data) {
+                 
+                 $.each(data.SiteAnnouncements, function(i, announcement) { 
+                   announcementHTML+= '<div class="Message Message--teal"><div class="Message-icon"><i class="fa fa-bell-o"></i></div><div class="Message-body">'; 
+                   announcementHTML+= '<p class="Message-title-teal">'+announcement.title+'</p>'; 
+                   announcementHTML+= '<p>'+announcement.Summary+'</p></div></div>';
+
+                 });
+                 if(data.SiteAnnouncements.length < 1){
+
+                 }
+                },
+                complete: function(data) {
+                  $(".announcementSection").html(announcementHTML);
+                  
+                }
+              });
+          });
+        });
+
+    </script>
+</head>
+<body>
+<div id="announcementSection">
+</div>
+
+<div style="height:2px;"></div>
+
+</body>
+</html>
+]]>
+  </Content>
+</Module>
